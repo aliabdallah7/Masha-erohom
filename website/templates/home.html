@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* CSS for container */
+        .upload-container {
+            width: 50%;
+            margin: 50px auto; /* Center the container horizontally */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Center the h2 element */
+        h1 {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-image: url('/static/ArabicBack.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <h1>Welcome to the Arab World</h1>
+    <div class="upload-container">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file">Choose a File: </label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
