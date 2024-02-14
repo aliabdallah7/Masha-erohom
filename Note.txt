@@ -1,3 +1,0 @@
-1- Bi-GRU		Karima/Ali
-2- BI-LSTM	Mohamed Ali/Abdo
-3- Marbert	Ali Abdallah/Hany
