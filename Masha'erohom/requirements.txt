@@ -1,0 +1,16 @@
+Flask==2.3.0
+Flask_Login==0.6.3
+flask_sqlalchemy==3.1.1
+jmespath==1.0.1
+joblib==1.2.0
+keras==2.15.0
+numpy==1.24.2
+pandas==2.0.0
+pywin32==306
+scipy==1.12.0
+selenium==4.18.1
+SQLAlchemy==2.0.27
+torch==2.2.0
+transformers==4.37.2
+Werkzeug==2.3.0
+scikit-learn==1.2.0
