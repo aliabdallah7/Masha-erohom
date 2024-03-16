@@ -14,6 +14,8 @@ from RandomForestForBatches.RandomForest import initialize_random_forest
 from flask import current_app
 from concurrent.futures import ThreadPoolExecutor
 from threading import Semaphore,Lock
+from flask import send_file
+import io
 
 global user_semaphore
 global lock 
@@ -63,7 +65,7 @@ def home():
 @login_required
 @views.route('/download/<filename>',methods=['GET'])
 def download(filename):
-    return send_from_directory('predictedData', filename, as_attachment=True)
+    return send_from_directory("C:\\My Projects\\Masha'erohom\\predictedData", filename, as_attachment=True)
 
 @login_required
 @views.route('/chart/<filename>', methods=['GET'])
