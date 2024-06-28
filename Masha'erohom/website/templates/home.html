@@ -18,6 +18,9 @@
             border-radius: 5px;
             text-align: center;
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            margin-left:15px;
+            margin-right:15px ;
+            background-color : transparent;
         }
         .container-fluid{
             padding-left: 15%;
@@ -41,14 +44,7 @@
                 display: block;
                 margin: 0px auto 12px auto;
             }
-            .inputs_container div {
-                margin-top: 10px;
-                margin-left: 15px;
-                margin-right: 15px;
-                margin-bottom: 6px;
-                background-color: transparent;
-                width: min-content;
-            }
+
             #inputLabel{
                 font-size: 14px;
             }
@@ -72,10 +68,14 @@
             .radioLabel span{
                 white-space: nowrap;
             }
-            .inputs_container div {
-                margin-left:15px;
-                margin-right:15px ;
-                background-color : transparent;
+
+            .upload-container{
+                margin-top: 10px;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-bottom: 6px;
+                background-color: transparent;
+                width: min-content;
                 width:100%;
                 align-content: center;
                 box-sizing:border-box;
@@ -90,12 +90,7 @@
             display:flex;
 
         }
-        .inputs_container div {
-            margin-left:15px;
-            margin-right:15px ;
-            background-color : transparent;
-            
-        }
+        
         form {
             margin-top: 20px;
         }
@@ -201,12 +196,29 @@
           img{
             width: 400px; height: auto; display: block; margin: 0 auto;
           }
+          #simpleTest{
+            margin-bottom: 40px;
+            margin-top: 0px;
+            width: 100%;
+          }
+          #simpleTest form{
+            margin:0px;
+          }
+          #simpleTestFormContainer{
+            display: flex;
+            justify-content: space-between;
+          }
+          #emojiContainer{
+            width: 100%; 
+            height: 4vh;
+            
+          }
     </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" ></script>
 </head>
 <body style="background-image: url('/static/ArabicBack.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
    
     <img src="{{ url_for('static', filename='logo.png') }}" id = "logo" alt="logo">
-
     <div class="inputs_container">
     <div class="upload-container">
         <form action="/" method="post" enctype="multipart/form-data">
@@ -221,7 +233,7 @@
         <form action="/" method="post" enctype="multipart/form-data">
             <label for="keyWord" class = "inputLabel">: ابحث عن تغريدات في تويتر للتحليل</label>
             </br>
-            <input type="text" id="keyWord" name="keyWord" required>
+            <input type="text" id="keyWord" name="keyWord" required dir="rtl">
             <div class="container" id = "radioFormContainer" style = "background:transparent; margin-top:10px;">
                 <div id = "radioForm">
                     <label class= "radioLabel" style = "margin-right:3.5px;">
@@ -240,7 +252,22 @@
             </div>
             <button type="submit">ابدأ البحث</button>
         </form>
-    </div></div>
+    </div>
+</div>
+<div class="upload-container" id="simpleTest">
+    
+    <form action="/" method="post" enctype="multipart/form-data" dir="rtl" id="emotionForm">
+        <label for="text" class = "inputLabel" dir="rtl"> بم تشعر؟</label>
+        </br>
+        <input type="text" id="text" name="text" required dir="rtl" style="width: 60%; margin-left:2vw; margin-right:2vw; margin-top:2vh; margin-bottom:1vh;" placeholder="اكتب جملة ثم اضغط enter">
+        <lottie-player id="emojiContainer" src="{{ url_for('static', filename='lottieEmojis/none.json') }}" background="transparent"  speed="1"  autoplay></lottie-player>
+        <span id ="emoText" style="width: 100%;"></span>
+    </form>
+</div>    
+<script>
+    const basePath = "{{ url_for('static', filename='lottieEmojis/') }}";
+</script>
+<script src="{{ url_for('static', filename='emojiScript.js') }}"></script>
 </body>
 </html>
 {% endblock %}

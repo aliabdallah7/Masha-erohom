@@ -16,6 +16,7 @@
             font-weight:600;
         }
         table {
+            direction: rtl;
             border-collapse: collapse;
             width: 70%; /* Adjusted width of the table container */
         }
@@ -80,16 +81,16 @@
         <div id="pieChartContainer" style="width: 25%;"> <!-- Adjusted width of the pie chart container -->
             <canvas id="pieChart" width="300" height="300"></canvas> <!-- Adjusted width and height of the pie chart canvas -->
             <!-- Button to redirect to home page -->
-            <a href="{{ url_for('views.download', filename=filename) }}" class="button">Download File</a>
+            <a href="{{ url_for('views.download', filename=filename) }}" class="button">تحميل الملف</a>
         </div>
         <!-- Create a table to display category counts -->
         <div style="width: 20%;">
             <table>
                 <thead>
                     <tr>
-                        <th>Category</th>
-                        <th>Counts</th>
-                        <th>Percentage </th>
+                        <th>الشعور</th>
+                        <th>العدد</th>
+                        <th>العدد </th>
 
                     </tr>
                 </thead>
@@ -105,18 +106,30 @@
         // Get data from Flask view
         var categories = JSON.parse('{{ categories | safe }}');
         var counts = JSON.parse('{{ counts | safe }}');
+        const translations ={
+            'joy': 'سعادة',
+            'love': 'حب',
+            'none': 'لا شعور',
+            'fear':'خوف',
+            'surprise': 'اندهاش',
+            'sympathy' : 'تعاطف',
+            'anger':'غضب',
+            'sadness':'حزن'
+        }
 
-        // Define custom colors for the charts
-        var colors = [
-            'rgba(255, 99, 132, 0.5)',   // Red
-            'rgba(54, 162, 235, 0.5)',    // Blue
-            'rgba(255, 206, 86, 0.5)',    // Yellow
-            'rgba(75, 192, 192, 0.5)',    // Green
-            'rgba(153, 102, 255, 0.5)',   // Purple
-            'rgba(255, 159, 64, 0.5)',    // Orange
-            'rgba(255, 0, 0, 0.5)',       // Additional color 1
-            'rgba(0, 255, 0, 0.5)'        // Additional color 2
-        ];
+        categories = categories.map(category => translations[category]);
+
+       // Define custom colors for the charts
+       var colors = [
+       'rgba(255, 206, 86, 0.5)',   
+       'rgba(255, 0, 0, 0.5)',    
+       'rgba(54, 162, 235, 0.5)',    
+       'rgba(255, 192, 203, 0.5)',    
+       'rgba(153, 102, 255, 0.5)',   
+       'rgba(255, 159, 64, 0.5)',   
+       'rgba(0, 0, 0, 0.5)',  
+       'rgba( 150, 150, 150, 0.5)'     
+   ];
 
         // Define data for the bar chart
         var barChartData = {
@@ -141,27 +154,47 @@
             }]
         };
 
-        // Configure options for both charts
-        var options = {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        display: false // hide the numbers on y-axis
-                    }
-                }]
+       // Configure options for both charts
+       var options = {
+        scales: {
+            y: {
+                ticks: {
+                    beginAtZero: true,
+                    display: true // hide the numbers on y-axis
+                }
             },
-            title: {
-                display: true,
-                text: 'Emotion Distribution'
+            x: {
+                ticks: {
+                    beginAtZero: true,
+                    display: true, // hide the numbers on y-axis
+                    font:{
+                    size:18
+                    }
+                }
             }
-        };
+        },
+
+        plugins: {
+        title: {
+            display: true,
+            text: 'توزيع المشاعر', // Set the title text here
+            font:{
+                size : 20
+            } // Set the font size for the title
+        },
+        legend: {
+            display: false // Hide legend if not needed
+        }
+    }
+    };
+
 
         // Configure options for the pie chart with percentage scale
         var pieChartOptions = {
             title: {
                 display: true,
                 text: 'Emotion Distribution'
+                
             },
             tooltips: {
                 callbacks: {
@@ -175,7 +208,19 @@
                         return categories[tooltipItem.index] + ': ' + currentValue + ' (' + percentage + '%)';
                     }
                 }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14, // Set the font size for legend labels
+                            family: 'Arial', // Set the font family for legend labels
+                            weight: 'bold' // Set the font weight for legend labels
+                        }
+                    }
+                }
             }
+
         };
 
         // Get the canvas elements for both charts
