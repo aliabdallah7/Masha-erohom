@@ -18,7 +18,7 @@ def login():
             hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
 
             if user.password==hashed_password:
-                flash('Logged in successfully!', category='success')
+                #flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:
@@ -66,7 +66,7 @@ def sign_up():
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
-            flash('Account created!', category='success')
+            #flash('Account created!', category='success')
             return redirect(url_for('views.home'))
 
     return render_template("register.html", user=current_user)

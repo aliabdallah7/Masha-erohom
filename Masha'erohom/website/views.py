@@ -14,17 +14,16 @@ from RandomForestForBatches.RandomForest import initialize_random_forest
 from flask import current_app
 from concurrent.futures import ThreadPoolExecutor
 from threading import Semaphore,Lock
-from flask import send_file
-import io
 
 global user_semaphore
 global lock 
-user_semaphore = Semaphore(1)
+user_semaphore = Semaphore(5)
 lock = Lock()
 
 views = Blueprint('views', __name__)
 ALLOWED_EXTENSIONS = {'csv'}
 MODELS_DIR = "RandomForestForBatches/ModelsFiles/"
+
 global dfs
 dfs = dict()
 
@@ -65,7 +64,7 @@ def home():
 @login_required
 @views.route('/download/<filename>',methods=['GET'])
 def download(filename):
-    return send_from_directory("C:\\My Projects\\Masha'erohom\\predictedData", filename, as_attachment=True)
+    return send_from_directory('predictedData', filename, as_attachment=True)
 
 @login_required
 @views.route('/chart/<filename>', methods=['GET'])
@@ -126,13 +125,13 @@ def ChartsWithTwitter():
 
 @views.route('/History')
 def History():
-    user_files = File.query.filter_by(user_id=current_user.id).all()
-    return render_template('history.html', user_files=user_files, user=current_user)
+        user_files = File.query.filter_by(user_id=current_user.id).all()
+        return render_template('history.html', user_files=user_files, user=current_user)
   
 def twitter_scraping(keyword,matchType):
     try:
         user_semaphore.acquire()
-        initialize_random_forest(f"{MODELS_DIR}Random_forest_final.joblib",f"{MODELS_DIR}bert_classifier_model.pth",  f"{MODELS_DIR}tokenizer.pkl",f"{MODELS_DIR}BiLSTM_model.h5" ,f"{MODELS_DIR}BiGRU_model.h5",f"{MODELS_DIR}tokenizer_config.json")
+        initialize_random_forest(f"{MODELS_DIR}Random_Forest.joblib",f"{MODELS_DIR}bert_classifier_model.pth",  f"{MODELS_DIR}tokenizer.pkl",f"{MODELS_DIR}BiLSTM_model.h5" ,f"{MODELS_DIR}BiGRU_model.h5",f"{MODELS_DIR}tokenizer_config.json")
         df = get_twitterSentiments(keyword=keyword,searchType=matchType)
         return df
     finally:
@@ -153,7 +152,7 @@ def start_twitter_task():
 
 @views.route('/start-file-task',methods=['POST'])
 def start_file_task():
-    initialize_random_forest(f"{MODELS_DIR}Random_forest_final.joblib",f"{MODELS_DIR}bert_classifier_model.pth",  f"{MODELS_DIR}tokenizer.pkl",f"{MODELS_DIR}BiLSTM_model.h5" ,f"{MODELS_DIR}BiGRU_model.h5",f"{MODELS_DIR}tokenizer_config.json")
+    initialize_random_forest(f"{MODELS_DIR}Random_Forest.joblib",f"{MODELS_DIR}bert_classifier_model.pth",  f"{MODELS_DIR}tokenizer.pkl",f"{MODELS_DIR}BiLSTM_model.h5" ,f"{MODELS_DIR}BiGRU_model.h5",f"{MODELS_DIR}tokenizer_config.json")
     data = request.get_json()
     df = pd.read_json(json.dumps(data.get('dataframe')))
     classifications = get_sentiments(df['text'])
@@ -172,3 +171,13 @@ def start_file_task():
 @views.route('/About-Us',methods = ['GET'])
 def aboutUS():
     return render_template('AboutUs.html',user = current_user)
+
+@views.route('predict_emotion',methods = ['POST'])
+def predict_emotion():
+    initialize_random_forest(f"{MODELS_DIR}Random_Forest.joblib",f"{MODELS_DIR}bert_classifier_model.pth",  f"{MODELS_DIR}tokenizer.pkl",f"{MODELS_DIR}BiLSTM_model.h5" ,f"{MODELS_DIR}BiGRU_model.h5",f"{MODELS_DIR}tokenizer_config.json")
+    data = request.get_json()
+    keyword = data['text']
+    print(keyword)
+    response = get_sentiments([keyword])[0]
+    print(response)
+    return jsonify({'emotion': response})
