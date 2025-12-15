@@ -2,7 +2,7 @@
    <img width="200" height="200" alt="مشاعرهم لوجو" src="https://github.com/user-attachments/assets/1c69530d-09a6-49fa-9587-36757cb06c33" />
 </p>
 
-# 🎯 Masha'erohom (Arabic Sentiment Analysis) <img align="right" width="150" height="150" alt="Masha'erohom Logo" src="https://github.com/user-attachments/assets/28d3fac7-f850-435a-bdd3-eafe1b6f1afe" />
+# 🎯 Masha'erohom (Arabic Sentiment Analysis)
 
 ![Python](https://img.shields.io/badge/Python-3.8+-3670A0?logo=python&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-0.12+-FF6B35?logo=seaborn)
@@ -21,16 +21,14 @@ An end-to-end Arabic Emotion Detection Web Application that leverages ensemble d
 
 ## 📋 Table of Contents
 - [Project Overview](#-project-overview)
-- [Key Features](#key-features)
-- [Architecture](#architecture)
-- [Models & Performance](#models--performance)
-- [Dataset](#dataset)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results & Comparisons](#results--comparisons)
-- [Future Work](#future-work)
-- [Team](#team)
-- [Citation](#citation)
+- [Key Features](#-key-features)
+- [Architecture](#%EF%B8%8F-architecture)
+- [Models & Performance](#-models--performance)
+- [Dataset](#-dataset)
+- [Results & Comparisons](#-results--comparisons)
+- [Future Work](#-future-work)
+- [Team](#-team)
+- [Citation](#-citation)
 
 ## 🚀 Project Overview
 
@@ -111,7 +109,7 @@ We combine three powerful models using Random Forest stacking:
 
 **Sample Distribution:**
 
-<img width="691" height="476" alt="image" align="center" src="https://github.com/user-attachments/assets/1ce16925-46f5-45ca-a110-103355e0d076" />
+<img width="600" height="400" alt="image" align="center" src="https://github.com/user-attachments/assets/1ce16925-46f5-45ca-a110-103355e0d076" />
 
 
 
@@ -191,10 +189,12 @@ We combine three powerful models using Random Forest stacking:
 - Hany Mohamed
 
 ### Institution
-**Ain Shams University**  
-Faculty of Computer & Information Sciences  
-Information Systems Department  
-Cairo, Egypt
+
+This project was developed as a Bachelor’s Graduation Project at:
+
+Faculty of Computer and Information Sciences, Information Systems Department  
+**Ain Shams University**
+<br>Cairo, Egypt
 
 ## 📚 Citation
 
