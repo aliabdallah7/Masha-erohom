@@ -229,9 +229,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **📧 Contact:** For questions or collaborations, please email: [eng.aliabdallah7@gmail.com](mailto:eng.aliabdallah7@gmail.com)
 
 **🔗 Live Demo:**
-<video width="640" height="360" controls>
-  <source src="https://raw.githubusercontent.com/aliabdallah7/Masha-erohom/main/Documentation/Demo.mp4" type="video/mp4">
-  Your browser does not support the video tag. [Download the video](https://raw.githubusercontent.com/aliabdallah7/Masha-erohom/main/Documentation/Demo.mp4) instead.
-</video>
+<br>
+<br>
+[![Demo Video](https://img.youtube.com/vi/7dKXsiUgu6A/0.jpg)](https://www.youtube.com/watch?v=7dKXsiUgu6A)
 
-**📖 Documentation:** [Full Documentation](docs/)
+**📖 Documentation:** [Full Documentation](https://github.com/aliabdallah7/Masha-erohom/blob/main/Documentation/Project%20Documentation.pdf)
+
