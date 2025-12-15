@@ -1,12 +1,23 @@
-# 🎯 Arabic Sentiment Analysis using Ensemble Deep Learning
+<p align="center">
+   <img width="200" height="200" alt="مشاعرهم لوجو" src="https://github.com/user-attachments/assets/1c69530d-09a6-49fa-9587-36757cb06c33" />
+</p>
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12+-orange)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)
-![Flask](https://img.shields.io/badge/Flask-2.3+-lightgrey)
-![License](https://img.shields.io/badge/License-MIT-green)
+# 🎯 Masha'erohom (Arabic Sentiment Analysis) <img align="right" width="150" height="150" alt="Masha'erohom Logo" src="https://github.com/user-attachments/assets/28d3fac7-f850-435a-bdd3-eafe1b6f1afe" />
 
-A state-of-the-art web application for Arabic emotion detection using an ensemble of deep learning models achieving **90% accuracy** on the Emotone_ar dataset.
+![Python](https://img.shields.io/badge/Python-3.8+-3670A0?logo=python&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.12+-FF6B35?logo=seaborn)
+![NumPy](https://img.shields.io/badge/NumPy-1.24+-013243?logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas&logoColor=white)
+![Anaconda](https://img.shields.io/badge/Anaconda-2023+-44A833?logo=anaconda&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-2.3+-000000?logo=flask&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12+-FF6F00?logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?logo=pytorch&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.2+-F7931E?logo=scikit-learn&logoColor=white)
+![Transformers](https://img.shields.io/badge/🤗%20Transformers-4.30+-FFD21E)
+<br>
+<br>
+<br>
+An end-to-end Arabic Emotion Detection Web Application that leverages ensemble deep learning to accurately classify emotions expressed in Arabic text. The system is designed to handle Modern Standard Arabic (MSA) and multiple Arabic dialects, achieving **90% accuracy** through a stacking ensemble of state-of-the-art models.
 
 ## 📋 Table of Contents
 - [Project Overview](#project-overview)
@@ -23,7 +34,14 @@ A state-of-the-art web application for Arabic emotion detection using an ensembl
 
 ## 🚀 Project Overview
 
-This project addresses the critical gap in Arabic Natural Language Processing by developing a sophisticated sentiment analysis system specifically designed for Arabic text. The system employs an ensemble of advanced deep learning models to accurately detect and classify eight different emotions in Arabic tweets and social media content.
+With the massive growth of Arabic content on social media platforms, understanding public emotions has become both critical and challenging. Arabic sentiment and emotion analysis is particularly difficult due to:
+   - Complex morphology
+   - Dialectal diversity
+   - Limited high-quality annotated datasets
+
+**Mashaerohom** addresses this gap by providing a production-ready web application that automatically detects emotions in Arabic text using a powerful ensemble of deep learning models.
+<br><br>
+The system supports **batch analysis** (CSV upload) and **real-time analysis** (Twitter keyword search), accompanied by interactive visual dashboards.
 
 **Key Achievement:** **90% Accuracy** - State-of-the-art performance on Arabic emotion detection
 
@@ -95,36 +113,7 @@ We combine three powerful models using Random Forest stacking:
 
 <img width="691" height="476" alt="image" align="center" src="https://github.com/user-attachments/assets/1ce16925-46f5-45ca-a110-103355e0d076" />
 
-## 🛠️ Installation
 
-### Prerequisites
-- Python 3.8+
-- 16GB RAM (minimum)
-- 50GB free disk space
-- Git
-
-### Step-by-Step Setupc
-```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/arabic-sentiment-analysis.git
-cd arabic-sentiment-analysis
-
-# 2. Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Download pre-trained models
-python download_models.py
-
-# 5. Initialize database
-python init_db.py
-
-# 6. Run the application
-python app.py
-```
 
 ## 📈 Results & Comparisons
 ### State-of-the-Art Comparison
