@@ -20,7 +20,7 @@
 An end-to-end Arabic Emotion Detection Web Application that leverages ensemble deep learning to accurately classify emotions expressed in Arabic text. The system is designed to handle Modern Standard Arabic (MSA) and multiple Arabic dialects, achieving **90% accuracy** through a stacking ensemble of state-of-the-art models.
 
 ## 📋 Table of Contents
-- [Project Overview](#project-overview)
+- [Project Overview](#-project-overview)
 - [Key Features](#key-features)
 - [Architecture](#architecture)
 - [Models & Performance](#models--performance)
