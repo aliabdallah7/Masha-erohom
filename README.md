@@ -29,6 +29,7 @@ An end-to-end Arabic Emotion Detection Web Application that leverages ensemble d
 - [Future Work](#-future-work)
 - [Team](#-team)
 - [Citation](#-citation)
+- [Publication](#-publication)
 
 ## 🚀 Project Overview
 
@@ -216,11 +217,17 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgements
 
-- **Ain Shams University** for academic support and resources
-- **Nile University** for the Emotone_ar dataset
-- **Hugging Face** for pre-trained models and transformers library
-- **Google Colab & Kaggle** for computational resources
-- All open-source contributors whose work made this project possible
+We acknowledge with gratitude:
+
+**🎓 Supervisory Excellence:** Dr. Shaimaa Haridy for her exceptional mentorship, research guidance, and unwavering support that transformed this project into published research.
+
+**🏛️ Institutional Support:** Ain Shams University for academic resources and Nile University for the Emotone_ar dataset.
+
+**⚡ Technical Enablement:** Hugging Face, Google Colab, and Kaggle for providing the tools and computational power essential for this deep learning research.
+
+**🌍 Open Source Community:** Countless contributors whose work forms the foundation of modern NLP research.
+
+*Gratitude turns what we have into enough, and research into impact.*
 
 ---
 
@@ -235,3 +242,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **📖 Documentation:** [Full Documentation](https://github.com/aliabdallah7/Masha-erohom/blob/main/Documentation/Project%20Documentation.pdf)
 
+## 📚 Publication
+
+[![Published Paper](https://img.shields.io/badge/Published_Paper-006400?style=for-the-badge&logo=academia&logoColor=white)](https://ijicis.journals.ekb.eg/article_406786.html)
+
+**Title:** Arabic Sentiment Analysis using Ensemble Deep Learning Model  
+**Journal:** International Journal of Intelligent Computing and Information Sciences  
+**DOI/Link:** [https://ijicis.journals.ekb.eg/article_406786.html](https://ijicis.journals.ekb.eg/article_406786.html)  
+**Status:** ✅ Published
